@@ -42,13 +42,20 @@ I think we are only starting to see the beginning of what is possible with contr
 - Crossplane Intro and Deep Dive: https://www.youtube.com/watch?v=xECc7XlD5kY
 - Building Digital Twins for DFDS With Crossplane and Kubernetes: https://www.youtube.com/watch?v=zOWLy-eZQas
 
-## Platform Engineering & DevX
+## Platform Engineering
 
-Another topic that was talked a lot about at KubeCon was "platform engineering", this was also called: "DevX", "golden paths" and "paved roads", we will refer to it as platform engineering (PE).
-Essentially the idea of platform engineering is that we want to make it easy for developers to "shift left" in the sense that we make it easy for them to utilize all of the tools and platforms we have available, but without having to be experts.
-That is we want to developers to deploy to Kubernetes, but we don't necessarily need all of them to also be experts in Kubernetes administration.
-In other words we want to create a good experience for developers or "DevX".
+Another topic that was talked a lot about at KubeCon is "platform engineering", this was also called: "DevX", "golden paths" and "paved roads", "capability team", we will refer to it as platform engineering (PE).
+While there might be slightly different connotations for each of the different names, I think they are all related to the same basic concept.
+
+Essentially the idea of platform engineering is that we want to make it easy for developers to "shift left" in the sense that we make it easy for them to utilize all of the tools and platforms we have available, but without having to be experts of managing the underlying infrastructure.
+For example, we want developers to deploy to Kubernetes, but we don't necessarily need all of them to also be experts in Kubernetes administration.
+In other words we want to create a good experience for developers or "DevX" (Developer Experience Design).
 We do that by treating the platform as the product and the developers as the customers, by making it easy for them to use tools the right way.
+We do this by creating friendly interfaces for developers to consume resources, such as cloud databases or Kubernetes deployments.
+A friendly interface could be a webportal, where a developer could create an environment, by inputting a few parameters, like the name, resource allocation and how long the environment should exist before being garbage collected.
+This is then translated to actual resources by some control plane managed by the Platform Engineering team.
+
+We can think of it as an abstraction similar to how a Kubernetes administrator would create persistent volumes, and then developers would consume those with persistent volume claims.
 
 Thus we get a separation of concerns:
 
@@ -56,7 +63,19 @@ Thus we get a separation of concerns:
 - Platform Engineering Team creates interfaces to make infrastructure easy to consume.
 - Developers utilize interfaces created by platform engineering to experiment and create value.
 
+Crossplane is also interesting in the context of platform engineering, as it provides a way of implementing this separation of concerns:
+Platform engineering team creates composite resources, and developers consume these by creating claims (instances).
+
+I like this [video](https://www.youtube.com/watch?v=CxJauwazTmY) by Viktor Farcic (Developer Advocate for Upbound), in which he explains control planes and Crossplane, by an example of a Platform Engineering team creating a composite cloud database resource, and developers then consuming it.
+
+**Talks to watch:**
+
+- From Kubernetes to PaaS to … Err, What’s Next? : https://www.youtube.com/watch?v=btUYeOa7JPI
+- From Cloud Naive to Cloud Native – Avoiding Mistakes Everyone Does : https://www.youtube.com/watch?v=EhBJkbo0rIE
+
 ## GitOps(Con)
+
+The main takeaway from GitOpsCon is that GitOps is maturing, both in terms of tooling and practices.
 
 ## CI/CD Choreography vs Orchestration
 

@@ -3,7 +3,7 @@
 I recently had the privilege of attending KubeCon / CloudNativeCon Europe 2022 (from here we'll just call it KubeCon) in Valencia, as well as GitOpsCon, one of the co-located events.
 
 In this blog post I will outline my takeaways and trends that I have seen at the convention, and in the Cloud Native community.
-These will be presented as a topics, in no particular order, and I will link to relevant talks from KubeCon, so that you can watch them yourself.
+These will be presented as topics, in no particular order, and I will link to relevant talks from KubeCon, so that you can watch them yourself.
 
 ## Kubernetes is a (Cloud Native) Control Plane
 
@@ -75,7 +75,14 @@ I like this [video](https://www.youtube.com/watch?v=CxJauwazTmY) by Viktor Farci
 
 ## GitOps(Con)
 
+GitOps is a dogmatic approach to managing applications and infrastructure, where the desired state is kept in a git repository.
+A control plane will then monitor the git repository for changes, and continuously reconcile "the real world" with the desired state.
+This brings a number of benefits to managing applications and infrastructure , like a well-known workflow (same as for source code) and an audit trail of changes in the git log.
+
 The main takeaway from GitOpsCon is that GitOps is maturing, both in terms of tooling and practices.
+Most teams are still somewhere on the journey towards GitOps, but the teams that adopt GitOps tend to actually make more deployments!
+
+Most notably
 
 ## CI/CD Choreography vs Orchestration
 

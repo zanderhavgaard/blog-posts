@@ -33,6 +33,15 @@ Sometimes container orchestration -as-a-service is a better fit
 
 ## You need many external tools/plugins: service meshes, storage driver, token handler etc.
 
+## K8s is hard to secure
+
+You still need to all of the things to secure your workloads that you would otherwise do, perhaps even more ...
+Use service meshes
+OIDC and zero trust
+
+a lot of people don't follow best practices, and end up with clusters that are wide open:
+https://www-bleepingcomputer-com.cdn.ampproject.org/c/s/www.bleepingcomputer.com/news/security/over-900-000-kubernetes-instances-found-exposed-online/amp/
+
 ---
 
 # So what should I use k8s for???
